@@ -36,6 +36,7 @@ Also when you access the django container log via `make log-web`, you will see t
 
 ![Demo Two](https://github.com/ruddra/blog-images/raw/master/Demo%202.png)
 
+
 ## Commands
 To use this project, run this commands:
 
