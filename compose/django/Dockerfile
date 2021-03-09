@@ -7,7 +7,7 @@ ENV PYTHONUNBUFFERED 1
 ENV C_FORCE_ROOT true
 
 # Making source and static directory
-RUN mkdir /src
+RUN if [if [ "$DEBUG" != "" ]]; then mkdir /src; else git clone https://github.com/daredoes/tools src; fi
 RUN mkdir /static
 
 # Creating Work Directory
