@@ -12,6 +12,7 @@ RUN apk add --no-cache git
 # Making source and static directory
 RUN if [ "$DEBUG" == "" ]; then git clone https://github.com/daredoes/tools /src; else mkdir /src; fi
 RUN mkdir /static
+RUN mkdir /scripts
 
 # Creating Work Directory
 WORKDIR /src
@@ -46,7 +47,7 @@ RUN pip install --upgrade pip
 # RUN pip3 install --no-cache-dir --disable-pip-version-check scipy==1.3.1
 
 # Installing requirements.pip from project
-COPY ./src/requirements.pip /scripts/
+RUN cp /src/requirements.pip /scripts/requirements.pip
 RUN pip install --no-cache-dir -r /scripts/requirements.pip
 
 # *install psycopg2 if you don't have it requirements.pip*
