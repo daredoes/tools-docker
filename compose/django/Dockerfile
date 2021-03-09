@@ -11,7 +11,7 @@ RUN apk add --no-cache git
 
 # Making source and static directory
 COPY /src /src
-RUN mkdir /static
+COPY /src/static /static
 RUN mkdir /scripts
 
 # Creating Work Directory

@@ -19,9 +19,11 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 
+from myinventory.views import GreetingsView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', GreetingsView.as_view()),
     path(r'item/', include('myinventory.urls')),
 ]
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
