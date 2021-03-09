@@ -131,8 +131,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-CELERY_BROKER_URL = f'redis://{os.getenv('REDIS_URL', 'redis')}:6379/0'
-CELERY_RESULT_BACKEND = f'redis://{os.getenv('REDIS_URL', 'redis')}:6379/0'
+REDIS_URL = os.getenv('REDIS_URL', 'redis')
+CELERY_BROKER_URL = 'redis://{}:6379/0'.format(REDIS_URL)
+CELERY_RESULT_BACKEND = 'redis://{}:6379/0'.format(REDIS_URL)
 
 STATIC_ROOT = './static/'
 MEDIA_ROOT = './media/'
