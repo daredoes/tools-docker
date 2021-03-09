@@ -10,7 +10,7 @@ ENV C_FORCE_ROOT true
 RUN apk add --no-cache git
 
 # Making source and static directory
-RUN if [ "$DEBUG" == "" ]; then git clone https://github.com/daredoes/tools /src; else mkdir /src; fi
+COPY /src /src
 RUN mkdir /static
 RUN mkdir /scripts
 
