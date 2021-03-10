@@ -133,12 +133,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "staticfiles"),
 ]
 
 REDIS_URL = os.getenv('REDIS_URL', 'redis')
-CELERY_BROKER_URL = 'redis://{}:6379/0'.format(REDIS_URL)
-CELERY_RESULT_BACKEND = 'redis://{}:6379/0'.format(REDIS_URL)
+CELERY_BROKER_URL = 'redis://{}:6379'.format(REDIS_URL)
+CELERY_RESULT_BACKEND = 'redis://{}:6379'.format(REDIS_URL)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -147,6 +147,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
