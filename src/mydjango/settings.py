@@ -140,7 +140,7 @@ REDIS_URL = os.getenv('REDIS_URL', 'redis')
 CELERY_BROKER_URL = 'redis://{}:6379/0'.format(REDIS_URL)
 CELERY_RESULT_BACKEND = 'redis://{}:6379/0'.format(REDIS_URL)
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
