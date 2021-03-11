@@ -4,6 +4,14 @@ from django import get_version
 from django.views.generic import TemplateView, View, DetailView
 from django.http import JsonResponse, HttpResponse
 from .models import ItemModel
+from .serializers import ItemModelSerializer
+
+from rest_framework.decorators import api_view
+from rest_framework import viewsets
+from rest_framework import permissions
+from rest_framework import mixins
+
+
 # Create your views here.
 
 
@@ -36,6 +44,11 @@ class ItemDetailView(DetailView):
     template_name = 'itemmodel_detail.html'
 
     model = ItemModel
+
+
+class ItemModelViewSet(viewsets.ModelViewSet):
+    queryset = ItemModel.objects.all()
+    serializer_class = ItemModelSerializer
 
 class ItemJsonView(DetailView):
     model = ItemModel
