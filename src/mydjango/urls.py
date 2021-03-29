@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', GreetingsView.as_view()),
     path(r'api/', include('myinventory.urls')),
+    path(r'j/', include('myjournal.urls')),
     path('api-auth/', include('rest_framework.urls')),
 ]
 

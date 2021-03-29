@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myinventory.apps.MyinventoryConfig',
+    'myjournal.apps.MyjournalConfig',
     'rest_framework',
     'celery',
     'corsheaders',
